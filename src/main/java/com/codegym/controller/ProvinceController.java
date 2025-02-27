@@ -77,4 +77,14 @@ public class ProvinceController {
         modelAndView.addObject("customers", customers);
         return modelAndView;
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        Optional<Province> province = provinceService.findById(id);
+        if (province.isPresent()) {
+            provinceService.remove(id);
+            return "redirect:/provinces";
+        }
+        return "redirect:/error_404";
+    }
 }

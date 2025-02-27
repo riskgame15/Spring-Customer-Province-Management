@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${message}"></p>
+<table border="3px">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>count</td>
+    </tr>
+    <th:block th:each="p:${provinces}">
+        <tr>
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.count}"></td>
+        </tr>
+    </th:block>
+    
+</table>
+</body>
+</html>

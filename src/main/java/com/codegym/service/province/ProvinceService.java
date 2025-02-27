@@ -1,5 +1,6 @@
 package com.codegym.service.province;
 
+import com.codegym.model.DTO.ProvinceDTO;
 import com.codegym.model.Province;
 import com.codegym.repository.IProvinceRepository;
 import com.codegym.service.IProvinceService;
@@ -30,6 +31,11 @@ public class ProvinceService implements IProvinceService {
 
     @Override
     public void remove(Long id) {
-        iProvinceRepository.deleteById(id);
+        iProvinceRepository.deleteProvinceById(id);
+    }
+
+    @Override
+    public Iterable<ProvinceDTO> getProvince() {
+        return iProvinceRepository.getProvince();
     }
 }

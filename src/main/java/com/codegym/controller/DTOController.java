@@ -16,7 +16,7 @@ public class DTOController {
 
     @ModelAttribute("message")
     public String getMessage() {
-        return "Hello from DTOController";
+        return "Hello World from DTOController";
     }
 
     @RequestMapping("")
